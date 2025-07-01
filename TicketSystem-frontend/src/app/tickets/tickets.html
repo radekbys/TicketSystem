@@ -1,0 +1,33 @@
+<a routerLink="/new-ticket" routerLinkActive="router-link-active"
+  >CREATE NEW TICKET</a
+>
+
+<h2>Tickets:</h2>
+<ul>
+  @for (ticket of tickets(); track ticket.id) {
+  <li>
+    <h4>{{ ticket.title }} | Status: {{ ticket.status }}</h4>
+    <ul>
+      <li>
+        <a routerLink="/ticket-details" routerLinkActive="router-link-active"
+          >See details</a
+        >
+      </li>
+      <li>
+        <a routerLink="/ticket-details" routerLinkActive="router-link-active"
+          >Update status</a
+        >
+      </li>
+      <li>
+        <a routerLink="/ticket-details" routerLinkActive="router-link-active"
+          >Delete Ticket</a
+        >
+      </li>
+    </ul>
+  </li>
+  <br />
+  <br />
+  }@empty {
+  <li>thera are no tickets</li>
+  }
+</ul>
