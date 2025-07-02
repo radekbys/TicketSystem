@@ -1,5 +1,4 @@
-<a routerLink="/tickets" routerLinkActive="router-link-active"
-  >GOTO MAIN PAGE</a
->
-<br />
-<p>ticket-removal works!</p>
+<p>{{ titleAndStatus() }}</p>
+<p>Are you sure you want do delete this ticket?</p>
+<button type="button" (click)="deleteTicket()">Yes</button>
+<button type="button" (click)="redirectToMainPage()">No</button>

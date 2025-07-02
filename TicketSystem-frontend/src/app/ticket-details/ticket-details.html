@@ -2,4 +2,14 @@
   >GOTO MAIN PAGE</a
 >
 <br />
-<p>ticket-details works!</p>
+
+@if (ticket() === undefined){
+<p>No info regarding this ticket, propably already deleted</p>
+}@else{
+
+<h4>{{ ticket()?.title }}</h4>
+<p>Status: {{ ticket()?.status }}</p>
+<p>Details: {{ ticket()?.content }}</p>
+<p>Creation Date: {{ ticket()?.creationDate | date : "fullDate" }}</p>
+
+}

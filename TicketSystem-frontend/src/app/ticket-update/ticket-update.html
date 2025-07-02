@@ -1,4 +1,28 @@
 <a routerLink="/tickets" routerLinkActive="router-link-active"
   >GOTO MAIN PAGE</a
 >
-<p>ticket-update works!</p>
+<br />
+<br />
+<p>Current status: {{ status() }}</p>
+<p>Select new status:</p>
+
+<!-- set status open -->
+@if (status() !== 'Open') {<button type="button" (click)="setStatus('Open')">
+  Open</button
+>}
+
+<!-- set status In Progress -->
+@if (status() !== 'In Progress') {<button
+  type="button"
+  (click)="setStatus('In Progress')"
+>
+  In Progress</button
+>}
+
+<!-- set status Closed -->
+@if (status() !== 'Closed') {<button
+  type="button"
+  (click)="setStatus('Closed')"
+>
+  Closed</button
+>}

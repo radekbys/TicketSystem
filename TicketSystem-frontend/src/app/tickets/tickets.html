@@ -9,20 +9,28 @@
     <h4>{{ ticket.title }} | Status: {{ ticket.status }}</h4>
     <ul>
       <li>
-        <a routerLink="/ticket-details" routerLinkActive="router-link-active"
+        <a
+          [routerLink]="'/ticket-details/' + ticket.id"
+          routerLinkActive="router-link-active"
           >See details</a
         >
       </li>
       <li>
-        <a routerLink="/ticket-details" routerLinkActive="router-link-active"
+        <a
+          [routerLink]="'/update-ticket/' + ticket.id"
+          routerLinkActive="router-link-active"
           >Update status</a
         >
       </li>
+      @if (ticket.status !== 'Closed'){
       <li>
-        <a routerLink="/ticket-details" routerLinkActive="router-link-active"
+        <a
+          [routerLink]="'/remove-ticket/' + ticket.id"
+          routerLinkActive="router-link-active"
           >Delete Ticket</a
         >
       </li>
+      }
     </ul>
   </li>
   <br />

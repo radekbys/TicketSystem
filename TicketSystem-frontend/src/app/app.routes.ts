@@ -7,23 +7,28 @@ import { TicketUpdate } from './ticket-update/ticket-update';
 
 export const routes: Routes = [
   {
+    //route to the mane page with ticket list
     path: 'tickets',
     component: Tickets,
   },
   {
+    //route to the ticket creation form
     path: 'new-ticket',
     component: NewTicketForm,
   },
   {
-    path: 'ticket-details',
+    //route to the ticket details
+    path: 'ticket-details/:id',
     component: TicketDetails,
   },
   {
-    path: 'remove-ticket',
+    //route to the ticket deletion confirmation dialogue/view
+    path: 'remove-ticket/:id',
     component: TicketRemoval,
   },
   {
-    path: 'update-ticket',
+    //route to the ticket deletion confirmation dialogue/view
+    path: 'update-ticket/:id',
     component: TicketUpdate,
   },
   {

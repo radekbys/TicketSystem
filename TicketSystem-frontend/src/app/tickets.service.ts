@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, WritableSignal } from '@angular/core';
 import { ITicket } from './model';
 
 @Injectable({ providedIn: 'root' })
@@ -40,5 +40,37 @@ export class TicketsService {
 
   getTickets() {
     return this.tickets;
+  }
+
+  getTicket(id: string) {
+    return this.tickets.find((t) => t.id === id);
+  }
+
+  createTicket(title: string, details: string) {
+    const date = new Date(Date.now()).toString();
+    const id = Date.now().toString();
+    const status = 'Open';
+
+    const newTicket = {
+      id: id,
+      title: title,
+      content: details,
+      status: status,
+      creationDate: date,
+    };
+
+    this.tickets.push(newTicket);
+  }
+
+  deleteTicket(id: string) {
+    this.tickets = this.tickets.filter((t) => t.id !== id);
+  }
+
+  setStatus(id: string, status: string) {
+    for (let i = 0; i < this.tickets.length; i++) {
+      if (this.tickets[i].id === id) {
+        this.tickets[i].status = status;
+      }
+    }
   }
 }
