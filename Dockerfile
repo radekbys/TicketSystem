@@ -17,9 +17,7 @@ COPY requirements-backend.txt .
 RUN pip install --upgrade pip && pip install -r requirements-backend.txt
 
 # Copy your app code
-COPY TicketSystem-backend/ ./
-
-WORKDIR /app/TicketSystem-backend
+COPY TicketSystem-backend/ .
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
