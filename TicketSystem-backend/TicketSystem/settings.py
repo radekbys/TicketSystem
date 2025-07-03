@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,10 @@ SECRET_KEY = "django-insecure-avkez8-ytqmdjn=ot2mfc!8-27m#3^mle5cy1zr)!q32el_6no
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Set below 3 variables for google cloud run hosting
+ALLOWED_HOSTS = ["*"]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_URL = "/static/"
 
 
 # Application definition
@@ -59,6 +63,7 @@ SIMPLE_JWT = {
 }
 
 MIDDLEWARE = [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
