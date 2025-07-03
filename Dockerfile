@@ -10,14 +10,16 @@ RUN apt-get update && apt-get install -y \
     netcat-openbsd gcc libpq-dev curl && \
     apt-get clean
 
-WORKDIR /TicketSystem-backend
+WORKDIR /app
 
 # Copy requirements and install
 COPY requirements-backend.txt .
 RUN pip install --upgrade pip && pip install -r requirements-backend.txt
 
 # Copy your app code
-COPY . .
+COPY TicketSystem-backend/ ./
+
+WORKDIR /app/TicketSystem-backend
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
