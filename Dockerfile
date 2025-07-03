@@ -14,7 +14,7 @@ WORKDIR /TicketSystem-backend
 
 # Copy requirements and install
 COPY requirements.txt .
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements-backend.txt
 
 # Copy your app code
 COPY . .
