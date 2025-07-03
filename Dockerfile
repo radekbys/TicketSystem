@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /TicketSystem-backend
 
 # Copy requirements and install
-COPY requirements.txt .
+COPY requirements-backend.txt .
 RUN pip install --upgrade pip && pip install -r requirements-backend.txt
 
 # Copy your app code
