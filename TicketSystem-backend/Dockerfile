@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     netcat-openbsd gcc libpq-dev curl && \
     apt-get clean
 
-WORKDIR /TicketSystem-backend
+WORKDIR /
 
 # Copy requirements and install
 COPY requirements-backend.txt .
