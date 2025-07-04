@@ -6,7 +6,7 @@ frontend contains an angular application
 
 ### to run app use "nvm use" to set correct node version, 
 ### then navigate to TicketSystem-frontend and run "npm install && npm start", 
-### should be working
+### should be working, because backend is already hosted
 
 backend is hosted using google cloud run service https://ticketsystem-326356427471.europe-west1.run.app
 backend endpoints:
