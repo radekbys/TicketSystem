@@ -1,6 +1,6 @@
 import { Component, input, signal, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { TicketsService } from '../tickets.service';
+import { TicketsService } from '../tickets.http.service';
 
 @Component({
   selector: 'app-ticket-removal',

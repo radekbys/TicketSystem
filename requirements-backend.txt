@@ -4,3 +4,4 @@ psycopg2-binary
 whitenoise
 djangorestframework
 djangorestframework-simplejwt
+django-cors-headers

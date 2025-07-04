@@ -1,6 +1,6 @@
 import { Component, input, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { TicketsService } from '../tickets.service';
+import { TicketsService } from '../tickets.http.service';
 import { ITicket } from '../model';
 import { CommonModule } from '@angular/common';
 

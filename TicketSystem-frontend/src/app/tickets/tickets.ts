@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { TicketsService } from '../tickets.service';
+import { TicketsService } from '../tickets.http.service';
 import { ITicket } from '../model';
 import { RouterLink } from '@angular/router';
 

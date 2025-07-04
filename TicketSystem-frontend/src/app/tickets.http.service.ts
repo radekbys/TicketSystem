@@ -1,11 +1,13 @@
-import { Injectable, WritableSignal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ITicket } from './model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class TicketsService {
   private tickets: ITicket[];
+  private token: any = 'not set';
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.tickets = [
       {
         id: '1',
@@ -36,9 +38,31 @@ export class TicketsService {
         creationDate: '2025-06-30T13:20:00Z',
       },
     ];
+
+    const url =
+      'https://ticketsystem-326356427471.europe-west1.run.app/api/token/';
+    const body = JSON.stringify({ username: 'radekbys', password: 'password' });
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+
+    this.httpClient
+      .post(url, body, {
+        headers: headers,
+        observe: 'body',
+        responseType: 'json',
+      })
+      .subscribe({
+        next: (resData) => {
+          this.token = resData;
+        },
+      });
   }
 
+  // requests the json web token frm the backend
+
   getTickets() {
+    console.log(this.token);
     return this.tickets;
   }
 
