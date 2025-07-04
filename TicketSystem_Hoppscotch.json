@@ -1,0 +1,165 @@
+{
+  "v": 8,
+  "name": "TicketSystem",
+  "folders": [],
+  "requests": [
+    {
+      "v": "14",
+      "name": "dodawanie",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:8000/api/tickets/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"title\": \"test\",\n  \"content\": \"this is a post test ticket\",\n  \"status\": \"Open\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "14",
+      "name": "list",
+      "method": "GET",
+      "endpoint": "http://127.0.0.1:8000/api/tickets/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgzMDkzNTA2LCJpYXQiOjE3NTE1NTc1MDYsImp0aSI6IjgyZDEyMWQ4OThiZjQ2NGJiNzMzZmFiYjY1OGI1NDU0IiwidXNlcl9pZCI6MX0.3upZPKcUgCsqy3ehxEl9GPUGy2hiFPFUK1PvxghhSRI",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "jwt",
+        "secret": "",
+        "privateKey": "",
+        "algorithm": "HS256",
+        "payload": "{}",
+        "addTo": "HEADERS",
+        "isSecretBase64Encoded": false,
+        "headerPrefix": "",
+        "paramName": "token",
+        "jwtHeaders": "{}",
+        "authActive": false
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": ""
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "14",
+      "name": "get details",
+      "method": "GET",
+      "endpoint": "http://127.0.0.1:8000/api/tickets/77c26dcb-f463-4629-8cfa-ef1b82974c9a/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "14",
+      "name": "update",
+      "method": "PUT",
+      "endpoint": "http://127.0.0.1:8000/api/tickets/e30a84c2-603c-4be1-beee-07aec9fbdc63/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n      \"title\": \"test\",\n      \"content\": \"this is a post test ticket\",\n      \"status\": \"In Progress\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "14",
+      "name": "usuwanie",
+      "method": "DELETE",
+      "endpoint": "http://127.0.0.1:8000/api/tickets/c67ad891-ed7a-4b77-9051-b5d36bde3b9e/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgzMDkzNTA2LCJpYXQiOjE3NTE1NTc1MDYsImp0aSI6IjgyZDEyMWQ4OThiZjQ2NGJiNzMzZmFiYjY1OGI1NDU0IiwidXNlcl9pZCI6MX0.3upZPKcUgCsqy3ehxEl9GPUGy2hiFPFUK1PvxghhSRI",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "14",
+      "name": "get token",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:8000/api/token/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "jwt",
+        "secret": "",
+        "privateKey": "",
+        "algorithm": "HS256",
+        "payload": "{}",
+        "addTo": "HEADERS",
+        "isSecretBase64Encoded": false,
+        "headerPrefix": "Bearer ",
+        "paramName": "token",
+        "jwtHeaders": "{}",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"username\": \"radekbys\",\n  \"password\": \"password\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "auth": {
+    "authActive": true,
+    "authType": "none"
+  },
+  "headers": [],
+  "_ref_id": "coll_mcnd86kg_87b29b31-8fcf-4e85-b213-c8e58263fbef"
+}

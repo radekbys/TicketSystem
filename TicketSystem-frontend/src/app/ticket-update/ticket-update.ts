@@ -11,20 +11,30 @@ import { TicketsService } from '../tickets.http.service';
 export class TicketUpdate implements OnInit {
   id = input.required<string>(); // selected ticket id
   status = signal<string>(''); // selected ticket current status, to be displayed
+  title = '';
+  content = '';
 
+  // injecting httpservice and router in constructor
   constructor(private ticketsService: TicketsService, private router: Router) {}
 
+  // loading current info about selected ticket on initialization
   ngOnInit(): void {
-    // get the current status
-    const ticket = this.ticketsService.getTicket(this.id());
-    this.status.set(ticket?.status ?? 'not found');
-
-    // if no status found redirect to main page
-    if (this.status() === 'not found') this.router.navigate(['/tickets']);
+    this.ticketsService.getTicket(this.id()).subscribe({
+      next: (data) => {
+        this.status.set(data.status);
+        this.title = data.title;
+        this.content = data.content;
+      },
+      error: (err) => console.error('Failed to load tickets', err),
+    });
   }
 
+  // sending a put request with new status
   setStatus(status: string) {
-    this.ticketsService.setStatus(this.id(), status);
-    this.router.navigate(['/tickets']);
+    this.ticketsService
+      .setStatus(this.id(), status, this.title, this.content)
+      .subscribe({
+        next: () => this.router.navigate(['/tickets']),
+      });
   }
 }

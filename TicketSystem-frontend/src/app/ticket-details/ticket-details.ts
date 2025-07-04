@@ -17,6 +17,11 @@ export class TicketDetails implements OnInit {
   constructor(private ticketsService: TicketsService) {}
 
   ngOnInit(): void {
-    this.ticket.set(this.ticketsService.getTicket(this.id()));
+    this.ticketsService.getTicket(this.id()).subscribe({
+      next: (data) => {
+        this.ticket.set(data);
+      },
+      error: (err) => console.error('Failed to load tickets', err),
+    });
   }
 }

@@ -2,6 +2,7 @@ from django.db import models
 import uuid
 
 
+# ORM model representing a single ticket, id and creation date are set autoasmtically on creation
 class Ticket(models.Model):
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False, max_length=8

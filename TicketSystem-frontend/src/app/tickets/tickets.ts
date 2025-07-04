@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { TicketsService } from '../tickets.http.service';
 import { ITicket } from '../model';
 import { RouterLink } from '@angular/router';
@@ -9,11 +9,17 @@ import { RouterLink } from '@angular/router';
   templateUrl: './tickets.html',
   styleUrl: './tickets.css',
 })
-export class Tickets {
+export class Tickets implements OnInit {
   tickets = signal<ITicket[]>([]);
 
-  // below I use constructor to inject service handling backend comunication
-  constructor(private ticketsService: TicketsService) {
-    this.tickets.set(this.ticketsService.getTickets());
+  // inject service handling backend comunication
+  constructor(private ticketsService: TicketsService) {}
+
+  // load list of tickets on initialization
+  ngOnInit(): void {
+    this.ticketsService.getTickets().subscribe({
+      next: (data) => this.tickets.set(data.tickets),
+      error: (err) => console.error('Failed to load tickets', err),
+    });
   }
 }

@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 
 
+# This is the view for getting whole list and posting a single ticket
 @api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
 def ticket_list(request):
@@ -23,6 +24,7 @@ def ticket_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
+# This is the view for getting details about a single ticket, changing a single record and deleting a ticket
 @api_view(["GET", "PUT", "DELETE"])
 def ticket_details(request, id):
     try:
