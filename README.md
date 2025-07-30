@@ -1,5 +1,5 @@
 # TicketSystem
-This is a recruitment assignment from NOTBUG company
+This is a recruitment assignment from NOTBUG company. Styling was not a part of this assignment, so it contains barely any css.
 
 backend contains a django rest-framework app
 frontend contains an angular application
