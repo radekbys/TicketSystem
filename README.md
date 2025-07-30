@@ -24,7 +24,7 @@ https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/
 
 3. Get details GET
    
-https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/<id>/
+https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/\<id\>/
 
 4. Update PUT
    
