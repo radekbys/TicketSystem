@@ -19,13 +19,17 @@ https://ticketsystem-326356427471.europe-west1.run.app/api/token/
 }
 
 2. List GET
+   
 https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/
 
 3. Get details GET
+   
 https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/<id>/
 
 4. Update PUT
+   
 https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/<id>/
+
 {
       "title": "test",
       "content": "this is a post test ticket",
@@ -33,7 +37,9 @@ https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/<id>/
 }
 
 5. add a new ticket POST
+   
 https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/
+
 {
   "title": "test",
   "content": "this is a post test ticket",
@@ -41,6 +47,7 @@ https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/
 }
 
 6. DELETE
+    
 http://127.0.0.1:8000/api/tickets/<id>/
 
 
