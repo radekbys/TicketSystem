@@ -24,11 +24,11 @@ https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/
 
 3. Get details GET
    
-https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/\<id\>/
+https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/<id\>/
 
 4. Update PUT
    
-https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/<id>/
+https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/<id\>/
 
 {
       "title": "test",
@@ -48,7 +48,7 @@ https://ticketsystem-326356427471.europe-west1.run.app/api/tickets/
 
 6. DELETE
     
-http://127.0.0.1:8000/api/tickets/<id>/
+http://127.0.0.1:8000/api/tickets/<id\>/
 
 
 backend has been tested using Hoppscotch, requests for testing included in TicketSystem_Hoppscotch.json
